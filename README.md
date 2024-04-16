@@ -98,3 +98,11 @@ Run the test cases with the following commands:
 ```
 java -cp .:junit-4.XX.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore InventoryTest KitchenTest RestaurantOptionsTest SalesReportTest
 ```
+
+# Demo Video
+
+### Demo Video
+
+[![Demo Video](http://img.youtube.com/vi/YOUR_VIDEO_ID_HERE/0.jpg)](https://rmiteduau-my.sharepoint.com/:v:/r/personal/s4061305_student_rmit_edu_au/Documents/Recording-20240416_140111.webm?csf=1&web=1&e=q6Azsa)
+
+Click on the image above to watch the demo video.
