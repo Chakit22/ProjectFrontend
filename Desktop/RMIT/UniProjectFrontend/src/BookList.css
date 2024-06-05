@@ -1,0 +1,59 @@
+/* src/components/BookList.css */
+.book-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9fafb;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .book-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin: 10px 0;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .book-details {
+    flex-grow: 1;
+  }
+  
+  .book-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .book-authors {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+  }
+  
+  .book-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .action-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #007bff;
+    font-size: 20px;
+  }
+  
+  .action-button:hover {
+    color: #0056b3;
+  }
+  
