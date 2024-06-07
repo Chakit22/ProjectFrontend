@@ -17,7 +17,7 @@ const BookForm = ({ addBook }) => {
 
     try {
       const response = await fetch(
-        "https://university-project-backend.vercel.app//books/addBook",
+        "https://university-project-backend.vercel.app/books/addBook",
         {
           method: "POST",
           headers: {

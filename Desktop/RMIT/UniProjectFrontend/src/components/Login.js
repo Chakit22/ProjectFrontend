@@ -19,7 +19,7 @@ const Login = () => {
 
   const chaeckData = (obj) => {
     const { email, password } = obj;
-    const urlApi = "https://university-project-backend.vercel.app//users/login";
+    const urlApi = "https://university-project-backend.vercel.app/users/login";
     const requestData = { email: email.toLowerCase(), password };
     axios
       .post(urlApi, requestData)

@@ -15,7 +15,7 @@ const HomePage = () => {
     const fetchBooks = async () => {
       try {
         const response = await fetch(
-          "https://university-project-backend.vercel.app//books",
+          "https://university-project-backend.vercel.app/books",
           {
             headers: { Authorization: localStorage.getItem("token") },
           }
@@ -31,7 +31,7 @@ const HomePage = () => {
     const fetchUsers = async () => {
       try {
         const response = await fetch(
-          "https://university-project-backend.vercel.app//users/getAll",
+          "https://university-project-backend.vercel.app/users/getAll",
           {
             headers: { Authorization: localStorage.getItem("token") },
           }

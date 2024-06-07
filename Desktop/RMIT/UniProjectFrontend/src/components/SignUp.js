@@ -48,7 +48,7 @@ const SignUp = () => {
   const submitHandler = (event) => {
     event.preventDefault();
     if (!Object.keys(errors).length) {
-      const urlApi = "https://university-project-backend.vercel.app//users/register";
+      const urlApi = "https://university-project-backend.vercel.app/users/register";
       axios
         .post(urlApi, data)
         .then((response) => {

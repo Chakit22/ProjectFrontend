@@ -42,7 +42,7 @@ const ResetPassword = () => {
     event.preventDefault();
     if (Object.keys(errors).length == 1) {
       console.log(data);
-      const urlApi = `https://university-project-backend.vercel.app//users/resetPassword/${token}`;
+      const urlApi = `https://university-project-backend.vercel.app/users/resetPassword/${token}`;
       const checkingToastId = toast.info("Changing Password..", {
         autoClose: false,
       });
