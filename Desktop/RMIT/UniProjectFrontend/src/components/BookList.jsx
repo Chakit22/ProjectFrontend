@@ -31,22 +31,15 @@ const BookList = ({ books }) => {
   return (
     <div className="book-list">
       {books.map((book) => (
-        <div key={book.id} className="book-card">
+        <div className="book-card">
           <div className="book-details">
-            <div className="book-name">{book.bookName}</div>
-            <div className="book-authors">{book.authors}</div>
+            <div className="book-name">{book.name}</div>
+            <div className="book-authors">{book.author}</div>
           </div>
           <div className="book-actions">
             <button
               className="action-button"
-              onClick={() => window.open(book.link, "_blank")}
-              title="Open in new tab"
-            >
-              <FaExternalLinkAlt />
-            </button>
-            <button
-              className="action-button"
-              onClick={() => downloadPDF(book.link, `${book.bookName}.pdf`)}
+              onClick={() => downloadPDF(book.link, `${book.name}.pdf`)}
               title="Download"
             >
               <FaDownload />

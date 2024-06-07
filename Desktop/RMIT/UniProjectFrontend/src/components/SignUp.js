@@ -23,7 +23,6 @@ const SignUp = () => {
     lastname: "",
     email: "",
     password: "",
-    confirmPassword: "",
     role: "User",
   });
 
@@ -49,16 +48,10 @@ const SignUp = () => {
   const submitHandler = (event) => {
     event.preventDefault();
     if (!Object.keys(errors).length) {
-      const { confirmPassword, ...newData } = data;
-      console.log(newData);
-      const urlApi = "https://itis-assignment.vercel.app/users/register";
-      const checkingToastId = toast.info("Checking data...", {
-        autoClose: false,
-      });
+      const urlApi = "https://university-project-backend.vercel.app//users/register";
       axios
-        .post(urlApi, newData)
+        .post(urlApi, data)
         .then((response) => {
-          toast.dismiss(checkingToastId);
           if (response.status === 200) {
             // navigate("/login");
             notify("You signed Up successfully", "success");
@@ -87,7 +80,6 @@ const SignUp = () => {
         lastname: true,
         email: true,
         password: true,
-        confirmPassword: true,
         role: true,
       });
     }
@@ -202,52 +194,6 @@ const SignUp = () => {
           )}
         </div>
         <div>
-          <div
-            className={
-              errors.confirmPassword && touched.confirmPassword
-                ? styles.unCompleted
-                : !errors.confirmPassword && touched.confirmPassword
-                ? styles.completed
-                : !errors.confirmPassword && touched.confirmPassword
-                ? styles.completed
-                : undefined
-            }
-          >
-            <input
-              type="password"
-              name="confirmPassword"
-              value={data.confirmPassword}
-              placeholder="Confirm Password"
-              onChange={changeHandler}
-              onFocus={focusHandler}
-              autoComplete="off"
-            />
-            <img src={passwordIcon} alt="" />
-          </div>
-          {errors.confirmPassword && touched.confirmPassword && (
-            <span className={styles.error}>{errors.confirmPassword}</span>
-          )}
-        </div>
-        <div>
-          <div
-            className={
-              errors.role && touched.role
-                ? styles.unCompleted
-                : !errors.role && touched.role
-                ? styles.completed
-                : undefined
-            }
-          >
-            <select
-              name="role"
-              value={data.role}
-              onChange={changeHandler}
-              onFocus={focusHandler}
-            >
-              <option value="User">User</option>
-              <option value="Admin">Admin</option>
-            </select>
-          </div>
           {errors.role && touched.role && (
             <span className={styles.error}>{errors.role}</span>
           )}

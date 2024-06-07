@@ -37,13 +37,6 @@ export const validate = (data, type) => {
     } else {
       delete errors.lastname;
     }
-    if (!data.confirmPassword) {
-      errors.confirmPassword = "Confirm the Password";
-    } else if (!(data.confirmPassword === data.password)) {
-      errors.confirmPassword = "Password is not match!";
-    } else {
-      delete errors.confirmPassword;
-    }
   }
 
   return errors;

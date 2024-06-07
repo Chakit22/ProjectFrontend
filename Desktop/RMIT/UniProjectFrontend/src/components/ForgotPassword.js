@@ -41,7 +41,7 @@ const ForgotPassword = () => {
     event.preventDefault();
     if (Object.keys(errors).length == 1) {
       console.log(data);
-      const urlApi = "https://itis-assignment.vercel.app/users/forgotPassword";
+      const urlApi = "https://university-project-backend.vercel.app//users/forgotPassword";
       const checkingToastId = toast.info("Checking Data..", {
         autoClose: false,
       });

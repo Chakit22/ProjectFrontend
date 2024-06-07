@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../BookForm.css"; // Import the CSS file
 
 const BookForm = ({ addBook }) => {
-  const [bookName, setBookName] = useState("");
+  const [name, setname] = useState("");
   const [bookAuthors, setBookAuthors] = useState("");
   const [bookLink, setBookLink] = useState("");
 
@@ -10,14 +10,14 @@ const BookForm = ({ addBook }) => {
     e.preventDefault();
 
     const bookData = {
-      bookName,
+      name,
       authors: bookAuthors,
       bookLink,
     };
 
     try {
       const response = await fetch(
-        "https://itis-assignment.vercel.app/books/addBook",
+        "https://university-project-backend.vercel.app//books/addBook",
         {
           method: "POST",
           headers: {
@@ -31,7 +31,7 @@ const BookForm = ({ addBook }) => {
       if (response.ok) {
         // Assuming addBook function updates the state or performs necessary actions
         addBook(bookData);
-        setBookName("");
+        setname("");
         setBookAuthors("");
         setBookLink("");
       } else {
@@ -49,8 +49,8 @@ const BookForm = ({ addBook }) => {
         <label>Book Name:</label>
         <input
           type="text"
-          value={bookName}
-          onChange={(e) => setBookName(e.target.value)}
+          value={name}
+          onChange={(e) => setname(e.target.value)}
           required
         />
       </div>

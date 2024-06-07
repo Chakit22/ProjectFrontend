@@ -19,15 +19,15 @@ const Login = () => {
 
   const chaeckData = (obj) => {
     const { email, password } = obj;
-    const urlApi = "https://itis-assignment.vercel.app/users/login";
+    const urlApi = "https://university-project-backend.vercel.app//users/login";
     const requestData = { email: email.toLowerCase(), password };
     axios
       .post(urlApi, requestData)
       .then((response) => {
         if (response.status === 200) {
-          const { token, user } = response.data;
-          localStorage.setItem("token", user.token);
-          localStorage.setItem("userRole", user.role);
+          const { token, role } = response.data;
+          localStorage.setItem("token", token);
+          localStorage.setItem("userRole", role);
           notify("You logged in to your account successfully", "success");
           navigate("/home");
         } else {

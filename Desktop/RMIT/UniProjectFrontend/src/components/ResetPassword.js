@@ -42,12 +42,12 @@ const ResetPassword = () => {
     event.preventDefault();
     if (Object.keys(errors).length == 1) {
       console.log(data);
-      const urlApi = `https://itis-assignment.vercel.app/users/resetPassword/${token}`;
+      const urlApi = `https://university-project-backend.vercel.app//users/resetPassword/${token}`;
       const checkingToastId = toast.info("Changing Password..", {
         autoClose: false,
       });
       axios
-        .patch(urlApi, data)
+        .post(urlApi, data)
         .then((response) => {
           toast.dismiss(checkingToastId);
           if (response.status === 200) {
