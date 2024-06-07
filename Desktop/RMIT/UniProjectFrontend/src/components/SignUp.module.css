@@ -1,10 +1,12 @@
 .formLogin {
-  background: #fff;
-  box-shadow: var(--box-shadow);
-  border: 1px solid var(--secondary-color);
-  padding: 25px;
-  border-radius: 11px;
-  min-width: 500px;
+  background: #f4f7fc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dde1e7;
+  padding: 30px;
+  border-radius: 15px;
+  min-width: 400px;
+  max-width: 600px;
+  margin: auto;
 }
 
 .container {
@@ -12,16 +14,19 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background: linear-gradient(135deg, #eceff1, #ffffff);
 }
 
 .formLogin > h2 {
-  margin-bottom: 28px;
-  color: var(--main-color);
+  margin-bottom: 20px;
+  color: #2c3e50;
   text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 24px;
 }
 
 .formLogin > div {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .formLogin > div > div {
@@ -31,32 +36,29 @@
 .formLogin input[type="text"],
 .formLogin input[type="email"],
 .formLogin input[type="password"] {
-  background: #fff;
-  border-radius: 4px;
+  background: #ffffff;
+  border-radius: 10px;
   outline: 0;
-  border: 1px solid var(--secondary-color);
-  box-shadow: var(--box-shadow);
-  padding: 15px 32px;
+  border: 1px solid #dde1e7;
+  padding: 15px 40px;
   width: 100%;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
   transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
 }
 .formLogin input[type="text"]:focus,
 .formLogin input[type="email"]:focus,
 .formLogin input[type="password"]:focus {
-  border: 1px solid var(--main-color);
+  border: 1px solid #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
 }
 
 .unCompleted > input {
-  border: 1px solid #ff0000 !important;
+  border: 1px solid #e74c3c !important;
 }
 
 .completed > input {
-  border: 1px solid #42ba96 !important;
+  border: 1px solid #2ecc71 !important;
   position: relative;
 }
 
@@ -85,57 +87,52 @@
 .formLogin input[type="checkbox"] {
   position: relative;
   margin-right: 10px;
-  width: 15px;
-  height: 15px;
-  border: 1px solid var(--main-color);
+  width: 20px;
+  height: 20px;
+  border: 1px solid #3498db;
   appearance: none;
-  border-radius: 5px;
+  border-radius: 4px;
   transition: all 0.2s ease-in-out;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
 }
 .formLogin input[type="checkbox"]:checked {
-  background-color: var(--main-color-hover);
+  background-color: #3498db;
   background-image: url("../img/tik.svg");
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .formLogin input[type="checkbox"]:focus {
   outline: none;
-  border: 2px solid var(--main-color-hover);
+  border: 2px solid #2980b9;
 }
 
 .formLogin > div > div img {
   position: absolute;
-  max-width: 20px;
-  max-height: 20px;
-  left: 7px;
+  max-width: 24px;
+  max-height: 24px;
+  left: 10px;
   top: 50%;
   transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
 }
 
 .formLogin ::placeholder {
-  color: #bfbbbb;
-  font-size: 12px;
-  font-family: Arial, Helvetica, sans-serif;
+  color: #95a5a6;
+  font-size: 14px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .formLogin > div span.error {
-  height: 10px;
+  height: 15px;
   text-align: left;
   margin-top: 5px;
   width: fit-content;
-  font-size: 0.7rem;
-  color: red;
+  font-size: 0.75rem;
+  color: #e74c3c;
   line-height: 1px;
-  padding: 9px 3px;
+  padding: 5px 10px;
   border-radius: 3px;
-  background-color: rgba(255, 0, 0, 0.175);
+  background-color: rgba(231, 76, 60, 0.1);
   display: inline-block;
 }
 
@@ -143,41 +140,55 @@
   display: block;
   text-align: center;
   width: 100%;
-  border-radius: 8px;
+  border-radius: 10px;
   outline: 0;
   border: none;
   color: #fff;
-  padding: 10px;
-  margin: 15px 0;
-  background: var(--main-color);
+  padding: 12px;
+  margin: 20px 0;
+  background: #3498db;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
 }
 
 .formLogin button[type="submit"]:hover {
-  background: var(--main-color-hover);
+  background: #2980b9;
+}
+
+.formLogin .createAccount {
+  display: block;
+  text-align: center;
+  width: 100%;
+  border-radius: 10px;
+  outline: 0;
+  border: none;
+  color: #fff;
+  padding: 12px;
+  margin: 20px 0;
+  background: #2ecc71;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.formLogin .createAccount:hover {
+  background: #27ae60;
 }
 
 .terms {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 19px 0;
+  margin: 20px 0;
 }
 
 @media (max-width: 568px) {
   .formLogin {
-    min-width: 300px;
-    padding: 16px;
+    min-width: 280px;
+    padding: 20px;
   }
   .formLogin input[type="text"],
-  .formLoginQ input[type="email"],
+  .formLogin input[type="email"],
   .formLogin input[type="password"] {
-    padding: 10px 32px;
+    padding: 12px 40px;
   }
 }
