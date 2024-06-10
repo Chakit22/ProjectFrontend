@@ -1,19 +1,11 @@
 import React, { useEffect, useState } from "react";
-//Icon
-import userIcon from "../img/user.svg";
 import emailIcon from "../img/email.svg";
-import passwordIcon from "../img/password.svg";
-// Validate
 import { validate } from "./validate";
-// Styles
 import styles from "./SignUp.module.css";
 import "react-toastify/dist/ReactToastify.css";
-// Toast
 import { ToastContainer, toast } from "react-toastify";
 import { notify } from "./toast";
-//
 import { Link, useNavigate } from "react-router-dom";
-// Axios
 import axios from "axios";
 
 const ForgotPassword = () => {
@@ -50,18 +42,17 @@ const ForgotPassword = () => {
         .then((response) => {
           toast.dismiss(checkingToastId);
           if (response.status === 200) {
-            // navigate("/login");
             notify("Email sent successfully", "success");
 
             setTimeout(() => {
-              navigate("/login"); // Navigate to login page after 3 seconds
+              navigate("/login"); 
               setTimeout(() => {
                 notify("Login to access the Dashboard", "success");
               }, 1000);
             }, 1000);
           } else {
             notify(
-              "You have already registered, log in to your account",
+              "Log in to your account",
               "error"
             );
           }

@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
-import BookForm from "./BookForm";
 import BookList from "./BookList";
-import LogoutButton from "./LogoutButton"; // Import LogoutButton component
+import LogoutButton from "./LogoutButton"; 
 
 const HomePage = () => {
   const [books, setBooks] = useState([]);
   const [isAdmin, setIsAdmin] = useState(false);
   const [token, setToken] = useState(null);
-  const [searchQuery, setSearchQuery] = useState(""); // State for search query
-  const [users, setUsers] = useState([]); // State for users
-  const [showUsers, setShowUsers] = useState(false); // State to toggle visibility of user list
+  const [searchQuery, setSearchQuery] = useState(""); 
+  const [users, setUsers] = useState([]);
+  const [showUsers, setShowUsers] = useState(false); 
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -53,17 +52,17 @@ const HomePage = () => {
       fetchBooks();
       if (isAdmin) {
         console.log("ef")
-        fetchUsers(); // Fetch users if the user is an admin
+        fetchUsers(); 
       }
     }
-  }, [isAdmin]); // Fetch users only when isAdmin state changes
+  }, [isAdmin]); 
 
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
   };
 
   const handleToggleUsers = () => {
-    setShowUsers(!showUsers); // Toggle visibility of user list
+    setShowUsers(!showUsers); 
   };
 
   const filteredBooks = searchQuery
@@ -82,7 +81,7 @@ const HomePage = () => {
     <div>
       <div className="App">
         <div className="top-right">
-          <LogoutButton /> {/* Add LogoutButton component */}
+          <LogoutButton /> 
         </div>
         <input
           type="text"
@@ -92,12 +91,12 @@ const HomePage = () => {
           style={{ margin: "20px 0", padding: "10px", width: "100%" }}
         />
         <BookList books={filteredBooks} />
-        {isAdmin && ( // Render the button only if the user is an admin
+        {isAdmin && ( 
           <button onClick={handleToggleUsers}>
             {showUsers ? "Hide Users" : "Show Users"}
           </button>
         )}
-        {showUsers && isAdmin && ( // Render the list of users only if the user is an admin and showUsers state is true
+        {showUsers && isAdmin && (
           <div>
             <h2>List of Users:</h2>
             <ul>

@@ -1,6 +1,6 @@
 import React from "react";
-import { FaDownload, FaExternalLinkAlt } from "react-icons/fa";
-import "../BookList.css"; // Import the CSS file
+import { FaDownload } from "react-icons/fa";
+import "../BookList.css";
 
 const downloadPDF = (url, filename) => {
   console.log(url)

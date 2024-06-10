@@ -1,19 +1,13 @@
 import React, { useEffect, useState } from "react";
-//Icon
 import userIcon from "../img/user.svg";
 import emailIcon from "../img/email.svg";
 import passwordIcon from "../img/password.svg";
-// Validate
 import { validate } from "./validate";
-// Styles
 import styles from "./SignUp.module.css";
 import "react-toastify/dist/ReactToastify.css";
-// Toast
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import { notify } from "./toast";
-//
 import { Link, useNavigate } from "react-router-dom";
-// Axios
 import axios from "axios";
 
 const SignUp = () => {
@@ -53,11 +47,10 @@ const SignUp = () => {
         .post(urlApi, data)
         .then((response) => {
           if (response.status === 200) {
-            // navigate("/login");
             notify("You signed Up successfully", "success");
 
             setTimeout(() => {
-              navigate("/login"); // Navigate to login page after 3 seconds
+              navigate("/login"); 
               setTimeout(() => {
                 notify("Login to access the Dashboard", "success");
               }, 1000);

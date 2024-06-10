@@ -1,19 +1,11 @@
 import React, { useEffect, useState } from "react";
-//Icon
-import userIcon from "../img/user.svg";
 import emailIcon from "../img/email.svg";
-import passwordIcon from "../img/password.svg";
-// Validate
 import { validate } from "./validate";
-// Styles
 import styles from "./SignUp.module.css";
 import "react-toastify/dist/ReactToastify.css";
-// Toast
 import { ToastContainer, toast } from "react-toastify";
 import { notify } from "./toast";
-//
-import { Link, useNavigate, useParams } from "react-router-dom";
-// Axios
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 const ResetPassword = () => {
@@ -42,20 +34,19 @@ const ResetPassword = () => {
     event.preventDefault();
     if (Object.keys(errors).length == 1) {
       console.log(data);
-      const urlApi = `https://university-project-backend.vercel.app/users/resetPassword/${token}`;
+      const url = `https://university-project-backend.vercel.app/users/resetPassword/${token}`;
       const checkingToastId = toast.info("Changing Password..", {
         autoClose: false,
       });
       axios
-        .post(urlApi, data)
+        .post(url, data)
         .then((response) => {
           toast.dismiss(checkingToastId);
           if (response.status === 200) {
-            // navigate("/login");
             notify("Password changed successfully", "success");
 
             setTimeout(() => {
-              navigate("/login"); // Navigate to login page after 3 seconds
+              navigate("/login"); 
               setTimeout(() => {
                 notify("Login to access the Dashboard", "success");
               }, 1000);
@@ -73,7 +64,7 @@ const ResetPassword = () => {
         });
     } else {
       console.log(errors);
-      notify("Please Check fileds again", "error");
+      notify("Please Check fields again", "error");
       setTouched({
         password: true,
       });

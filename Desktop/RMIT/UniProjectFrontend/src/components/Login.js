@@ -19,16 +19,16 @@ const Login = () => {
 
   const chaeckData = (obj) => {
     const { email, password } = obj;
-    const urlApi = "https://university-project-backend.vercel.app/users/login";
+    const url = "https://university-project-backend.vercel.app/users/login";
     const requestData = { email: email.toLowerCase(), password };
     axios
-      .post(urlApi, requestData)
+      .post(ur, requestData)
       .then((response) => {
         if (response.status === 200) {
           const { token, role } = response.data;
           localStorage.setItem("token", token);
           localStorage.setItem("userRole", role);
-          notify("You logged in to your account successfully", "success");
+          notify("Logged in successfully", "success");
           navigate("/home");
         } else {
           notify("Your password or your email is wrong", "error");
